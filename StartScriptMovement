@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+public class NewBehaviourPlayerMovement : MonoBehaviour
+{
+    private Rigidbody rb;
+    public float VelocidadDeMovimiento = 10f;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    void Update()
+    {
+        Mover();
+    }
+
+    private void Mover()
+    {
+        movH = Input.GetAxis("Horizontal");
+        movV = Input.GetAxis("Vertical");
+        mov = Vector3(movH, 0f, movV * (VelocidadDeMovimiento));
+    }
+}
